@@ -24,4 +24,13 @@ Example:
  - yes patch level: 1.2.3  
   
 To make life easier, use `x` for catch all  
-x.x.x
+x.x.x  
+  
+  
+GRUNT CONTRIB WATCH
+===================
+Needs grunt watch daemon to be running to constantly monitor for  
+changes, not sure how effective/efficient it is. Using up alot of  
+CPU that's for sure.  
+Still have no idea what spawn child processes does but okay..  
+

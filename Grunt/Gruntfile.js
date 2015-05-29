@@ -8,14 +8,14 @@ module.exports = function(grunt) {
         files: ['src/js/*.js'],
         tasks: ['concat', 'uglify'],
         options: {
-          spawn: false,
+          spawn: true,
         }
       },
       css: {
         files: ['src/css/*.scss', 'src/css/libs/*.scss'],
         tasks: ['sass'],
         options: {
-          spawn: false
+          spawn: true
         }
       }
     },
