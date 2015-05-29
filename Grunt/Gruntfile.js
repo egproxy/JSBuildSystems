@@ -5,14 +5,14 @@ module.exports = function(grunt) {
 
     watch: {
       scripts: {
-        files: ['js/*.js'],
+        files: ['src/js/*.js'],
         tasks: ['concat', 'uglify'],
         options: {
           spawn: false,
         }
       },
       css: {
-        files: ['css/*.scss'],
+        files: ['src/css/*.scss', 'src/css/libs/*.scss'],
         tasks: ['sass'],
         options: {
           spawn: false
@@ -21,20 +21,19 @@ module.exports = function(grunt) {
     },
 
     concat: {
-      // Configuration for concat
       options: {
         separator: ';'
       },
       dist: {
-        src: ['js/lib/*.js'],
-        dest: 'js/build/production.js'
+        src: ['src/js/libs/*.js', 'src/js/*.js'],
+        dest: 'build/js/production.js'
       }
     },
 
     uglify: {
       build: {
-        src: 'js/build/production.js',
-        dest: 'js/build/production.min.js'
+        src: 'build/js/production.js',
+        dest: 'build/js/production.min.js'
       }
     },
 
@@ -44,7 +43,7 @@ module.exports = function(grunt) {
           style: 'compressed'
         },
         files: {
-          'css/build/global.css': 'css/global.scss'
+          'build/css/global.css': 'src/css/global.scss'
         }
       }
     }
